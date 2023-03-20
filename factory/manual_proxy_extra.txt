@@ -1,0 +1,5 @@
+# 代理bing，适用于new bing
+bing.com
+
+# 一些18+
+kisscos.net
