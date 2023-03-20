@@ -63,6 +63,7 @@ values['ad'] = getRulesStringFromFile('resultant/ad.list', 'Reject')
 
 values['manual_direct'] = getRulesStringFromFile('manual_direct.txt', 'Direct')
 values['manual_proxy']  = getRulesStringFromFile('manual_proxy.txt', 'Proxy')
+values['manual_proxy_extra']  = getRulesStringFromFile('manual_proxy_extra.txt', 'Proxy')
 values['manual_reject'] = getRulesStringFromFile('manual_reject.txt', 'Reject')
 
 values['gfwlist'] = getRulesStringFromFile('resultant/gfw.list', 'Proxy') \

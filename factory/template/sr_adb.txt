@@ -12,6 +12,7 @@
 
 {{manual_reject}}
 {{manual_proxy}}
+{{manual_proxy_extra}}
 {{manual_direct}}
 
 {{ad}}
