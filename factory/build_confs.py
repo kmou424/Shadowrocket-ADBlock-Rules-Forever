@@ -36,8 +36,6 @@ def getRulesStringFromFile(path, kind, rule_type=''):
             continue
         elif rule_type == 'UA':
             prefix = 'USER-AGENT'
-        elif rule_type == 'DK':
-            prefix = 'DOMAIN-KEYWORD'
         else:
             prefix = 'DOMAIN-SUFFIX'
             if re.match(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', content):
@@ -62,30 +60,23 @@ values = {}
 
 values['build_time'] = time.strftime("%Y-%m-%d %H:%M:%S")
 
-values['top500_proxy'] = getRulesStringFromFile(
-    'resultant/top500_proxy.list', 'Proxy')
-values['top500_direct'] = getRulesStringFromFile(
-    'resultant/top500_direct.list', 'Direct')
+values['top500_proxy'] = getRulesStringFromFile('resultant/top500_proxy.list', 'Proxy')
+values['top500_direct'] = getRulesStringFromFile('resultant/top500_direct.list', 'Direct')
 
 values['ad'] = getRulesStringFromFile('resultant/ad.list', 'Reject')
 
-values['manual_direct'] = getRulesStringFromFile('manual_direct.txt', 'Direct')
-values['manual_proxy'] = getRulesStringFromFile('manual_proxy.txt', 'Proxy')
-values['manual_proxy_extra'] = getRulesStringFromFile(
-    'manual_proxy_extra.txt', 'Proxy')
-values['manual_ua_proxy'] = getRulesStringFromFile(
-    'manual_ua_proxy.txt', 'Proxy', 'UA')
-values['manual_ua_reject'] = getRulesStringFromFile(
-    'manual_ua_reject.txt', 'Reject', 'UA')
-values['manual_domain_keyword_proxy'] = getRulesStringFromFile(
-    'manual_domain_keyword_proxy.txt', 'Proxy', 'DK')
-values['manual_domain_keyword_reject'] = getRulesStringFromFile(
-    'manual_domain_keyword_reject.txt', 'Reject', 'DK')
+values['manual_direct'] = getRulesStringFromFile('manual/direct/domain_ip_keyword.txt', 'Direct')
+values['manual_direct_ua'] = getRulesStringFromFile('manual/direct/useragent.txt', 'Direct', 'UA')
 
-values['manual_reject'] = getRulesStringFromFile('manual_reject.txt', 'Reject')
+values['manual_proxy'] = getRulesStringFromFile('manual/proxy/domain_ip_keyword.txt', 'Proxy')
+values['manual_proxy_ua'] = getRulesStringFromFile('manual/proxy/useragent.txt', 'Proxy', 'UA')
+
+values['manual_reject'] = getRulesStringFromFile('manual/reject/domain_ip_keyword.txt', 'Reject')
+values['manual_reject_ua'] = getRulesStringFromFile('manual/reject/useragent.txt', 'Reject', 'UA')
+
 
 values['gfwlist'] = getRulesStringFromFile('resultant/gfw.list', 'Proxy') \
-    + getRulesStringFromFile('manual_gfwlist.txt', 'Proxy')
+    + getRulesStringFromFile('manual/gfwlist.txt', 'Proxy')
 
 
 # make confs

@@ -106,7 +106,7 @@ rule += get_rule('https://raw.githubusercontent.com/Johnshall/cn-blocked-domain/
 rules = clear_format(rule)
 
 excludes = []
-with open('manual_gfwlist_excludes.txt', 'r', encoding='utf-8') as f:
+with open('manual/gfwlist_excludes.txt', 'r', encoding='utf-8') as f:
     for line in f.readlines():
         if line[0] == "#" or line == "\n":
             continue

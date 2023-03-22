@@ -8,6 +8,7 @@
 
 
 {{ad}}
+{{manual_reject_ua}}
 {{manual_reject}}
 
 {{top500_direct}}
@@ -15,6 +16,7 @@
 DOMAIN-SUFFIX,cn,DIRECT
 GEOIP,CN,DIRECT
 
+{{manual_direct_ua}}
 {{manual_direct}}
 
 IP-CIDR,192.168.0.0/16,DIRECT
@@ -22,9 +24,7 @@ IP-CIDR,10.0.0.0/8,DIRECT
 IP-CIDR,172.16.0.0/12,DIRECT
 IP-CIDR,127.0.0.0/8,DIRECT
 
+{{manual_proxy_ua}}
 {{manual_proxy}}
-{{manual_proxy_extra}}
-{{manual_ua_proxy}}
-{{manual_domain_keyword_proxy}}
 
 FINAL,PROXY

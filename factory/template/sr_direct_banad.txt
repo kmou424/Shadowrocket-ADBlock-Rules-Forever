@@ -3,8 +3,7 @@
 # 通过此规则可以将 SR 作为广告过滤器使用。
 #
 
-{{manual_ua_reject}}
-{{manual_domain_keyword_reject}}
+{{manual_reject_ua}}
 {{manual_reject}}
 
 {{ad}}

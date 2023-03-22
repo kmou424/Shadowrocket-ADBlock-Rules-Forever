@@ -10,12 +10,11 @@
 # 这是旧的“黑名单规则”，存在的意义在于备份和向前兼容，一般无需选用。
 #
 
-{{manual_ua_reject}}
-{{manual_domain_keyword_reject}}
+{{manual_reject_ua}}
 {{manual_reject}}
+{{manual_proxy_ua}}
 {{manual_proxy}}
-{{manual_proxy_extra}}
-{{manual_ua_proxy}}
+{{manual_direct_ua}}
 {{manual_direct}}
 
 {{ad}}

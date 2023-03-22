@@ -443,3 +443,27 @@ openai.com
 
 # Paramount
 paramountplus.com
+
+# 代理bing，适用于new bing
+bing.com
+
+# 一些18+
+kisscos.net
+
+# TikTok
+p16-tiktokcdn-com.akamaized.net
+byteoversea.com
+ibytedtos.com
+ibyteimg.com
+ipstatp.com
+muscdn.com
+musical.ly
+sgpstatp.com
+snssdk.com
+tik-tokapi.com
+tiktok.com
+tiktokcdn.com
+tiktokv.com
+
+# TikTok
+-tiktokcdn-com
