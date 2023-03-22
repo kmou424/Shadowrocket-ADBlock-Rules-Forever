@@ -36,6 +36,8 @@ def getRulesStringFromFile(path, kind, rule_type=''):
             continue
         elif rule_type == 'UA':
             prefix = 'USER-AGENT'
+        elif rule_type == 'DK':
+            prefix = 'DOMAIN-KEYWORD'
         else:
             prefix = 'DOMAIN-SUFFIX'
             if re.match(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', content):
@@ -75,6 +77,10 @@ values['manual_ua_proxy'] = getRulesStringFromFile(
     'manual_ua_proxy.txt', 'Proxy', 'UA')
 values['manual_ua_reject'] = getRulesStringFromFile(
     'manual_ua_reject.txt', 'Reject', 'UA')
+values['manual_domain_keyword_proxy'] = getRulesStringFromFile(
+    'manual_domain_keyword_proxy.txt', 'Proxy', 'DK')
+values['manual_domain_keyword_reject'] = getRulesStringFromFile(
+    'manual_domain_keyword_reject.txt', 'Reject', 'DK')
 
 values['manual_reject'] = getRulesStringFromFile('manual_reject.txt', 'Reject')
 

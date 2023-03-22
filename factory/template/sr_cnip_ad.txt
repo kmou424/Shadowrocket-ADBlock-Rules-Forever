@@ -10,6 +10,8 @@ DOMAIN-SUFFIX,ampproject.org,PROXY # Google AMP issue#237
 {{manual_proxy_extra}}
 {{manual_ua_proxy}}
 
+{{manual_ua_reject}}
+{{manual_domain_keyword_reject}}
 {{manual_reject}}
 
 {{ad}}

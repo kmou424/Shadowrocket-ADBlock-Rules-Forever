@@ -7,6 +7,7 @@
 {{manual_proxy}}
 {{manual_proxy_extra}}
 {{manual_ua_proxy}}
+{{manual_domain_keyword_proxy}}
 {{gfwlist}}
 
 FINAL,direct

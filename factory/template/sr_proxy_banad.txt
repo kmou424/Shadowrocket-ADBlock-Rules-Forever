@@ -4,6 +4,8 @@
 #
 
 
+{{manual_ua_reject}}
+{{manual_domain_keyword_reject}}
 {{manual_reject}}
 
 {{ad}}
