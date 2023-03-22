@@ -24,5 +24,6 @@ IP-CIDR,127.0.0.0/8,DIRECT
 
 {{manual_proxy}}
 {{manual_proxy_extra}}
+{{manual_ua_proxy}}
 
 FINAL,PROXY

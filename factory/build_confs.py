@@ -20,7 +20,7 @@ confs_names = [
 ]
 
 
-def getRulesStringFromFile(path, kind):
+def getRulesStringFromFile(path, kind, rule_type=''):
     file = open(path, 'r', encoding='utf-8')
     contents = file.readlines()
     ret = ''
@@ -30,8 +30,12 @@ def getRulesStringFromFile(path, kind):
         if not len(content):
             continue
 
+        prefix = ''
         if content.startswith('#'):
             ret += content + '\n'
+            continue
+        elif rule_type == 'UA':
+            prefix = 'USER-AGENT'
         else:
             prefix = 'DOMAIN-SUFFIX'
             if re.match(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', content):
@@ -41,7 +45,7 @@ def getRulesStringFromFile(path, kind):
             elif '.' not in content and len(content) > 1:
                 prefix = 'DOMAIN-KEYWORD'
 
-            ret += prefix + ',%s,%s\n' % (content, kind)
+        ret += prefix + ',%s,%s\n' % (content, kind)
 
     return ret
 
@@ -56,25 +60,33 @@ values = {}
 
 values['build_time'] = time.strftime("%Y-%m-%d %H:%M:%S")
 
-values['top500_proxy']  = getRulesStringFromFile('resultant/top500_proxy.list', 'Proxy')
-values['top500_direct'] = getRulesStringFromFile('resultant/top500_direct.list', 'Direct')
+values['top500_proxy'] = getRulesStringFromFile(
+    'resultant/top500_proxy.list', 'Proxy')
+values['top500_direct'] = getRulesStringFromFile(
+    'resultant/top500_direct.list', 'Direct')
 
 values['ad'] = getRulesStringFromFile('resultant/ad.list', 'Reject')
 
 values['manual_direct'] = getRulesStringFromFile('manual_direct.txt', 'Direct')
-values['manual_proxy']  = getRulesStringFromFile('manual_proxy.txt', 'Proxy')
-values['manual_proxy_extra']  = getRulesStringFromFile('manual_proxy_extra.txt', 'Proxy')
+values['manual_proxy'] = getRulesStringFromFile('manual_proxy.txt', 'Proxy')
+values['manual_proxy_extra'] = getRulesStringFromFile(
+    'manual_proxy_extra.txt', 'Proxy')
+values['manual_ua_proxy'] = getRulesStringFromFile(
+    'manual_ua_proxy.txt', 'Proxy', 'UA')
+values['manual_ua_reject'] = getRulesStringFromFile(
+    'manual_ua_reject.txt', 'Reject', 'UA')
+
 values['manual_reject'] = getRulesStringFromFile('manual_reject.txt', 'Reject')
 
 values['gfwlist'] = getRulesStringFromFile('resultant/gfw.list', 'Proxy') \
-                  + getRulesStringFromFile('manual_gfwlist.txt', 'Proxy')
+    + getRulesStringFromFile('manual_gfwlist.txt', 'Proxy')
 
 
 # make confs
 for conf_name in confs_names:
     file_template = open('template/'+conf_name+'.txt', 'r', encoding='utf-8')
     template = file_template.read()
-  
+
     if conf_name != 'sr_ad_only':
         template = str_head + template + str_foot
 

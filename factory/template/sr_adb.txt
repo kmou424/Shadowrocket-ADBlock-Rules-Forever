@@ -13,6 +13,7 @@
 {{manual_reject}}
 {{manual_proxy}}
 {{manual_proxy_extra}}
+{{manual_ua_proxy}}
 {{manual_direct}}
 
 {{ad}}
