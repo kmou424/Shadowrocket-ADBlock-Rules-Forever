@@ -470,3 +470,6 @@ tiktokv.com
 
 # TikTok
 -tiktokcdn-com
+
+# OneDrive
+graph.microsoft.com
