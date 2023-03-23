@@ -447,6 +447,9 @@ paramountplus.com
 # 代理bing，适用于new bing
 bing.com
 
+# 白夜极光 国际服
+tha-game.alchemystars.com
+
 # 一些18+
 kisscos.net
 
