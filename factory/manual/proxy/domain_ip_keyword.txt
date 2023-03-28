@@ -473,3 +473,6 @@ tiktokv.com
 
 # OneDrive
 graph.microsoft.com
+
+# BAI
+theb.ai
